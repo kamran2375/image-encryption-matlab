@@ -37,7 +37,7 @@ if ~isequal(file, 0)
     imshow(imread(fullfile(path, file)), 'Parent', handles.axes2);
 end
 
-function encrypte_btn(hObject, eventdata, handles)
+function encrypt_btn(hObject, eventdata, handles)
 if ~isequal(get(handles.secret_img_text, 'String'), 'No Image Selected!')...
         && ~isequal(get(handles.template_img_text, 'String'), 'No Image Selected!')
     secret_img = imread(get(handles.secret_img_text, 'String'));
@@ -57,7 +57,7 @@ if ~isequal(file, 0)
     imshow(imread(fullfile(path, file)), 'Parent', handles.axes3);
 end
 
-function decrypte_btn(hObject, eventdata, handles)
+function decrypt_btn(hObject, eventdata, handles)
 if ~isequal(get(handles.encrypted_img_text, 'String'), 'No Image Selected!')
     encrypted_img = imread(get(handles.encrypted_img_text, 'String'));
     decrypted_img = decrypt(encrypted_img);
