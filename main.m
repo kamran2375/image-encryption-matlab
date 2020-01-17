@@ -42,7 +42,7 @@ if ~isequal(get(handles.secret_img_text, 'String'), 'No Image Selected!')...
         && ~isequal(get(handles.template_img_text, 'String'), 'No Image Selected!')
     secret_img = imread(get(handles.secret_img_text, 'String'));
     template_img = imread(get(handles.template_img_text, 'String'));
-    encrypted_img = encrypte(secret_img, template_img);
+    encrypted_img = encrypt(secret_img, template_img);
     imwrite(encrypted_img, strcat(datestr(now,'yyyymmddHHMMSSFFF'), '_encrypted.png'));
     figure;
     subplot(1, 3, 1);imshow(secret_img);title('Secret Image');
@@ -60,7 +60,7 @@ end
 function decrypte_btn(hObject, eventdata, handles)
 if ~isequal(get(handles.encrypted_img_text, 'String'), 'No Image Selected!')
     encrypted_img = imread(get(handles.encrypted_img_text, 'String'));
-    decrypted_img = decrypte(encrypted_img);
+    decrypted_img = decrypt(encrypted_img);
     imwrite(decrypted_img, strcat(datestr(now,'yyyymmddHHMMSSFFF'), '_decrypted.png'));
     figure;
     subplot(1, 2, 1);imshow(encrypted_img);title('Encrypted Image');

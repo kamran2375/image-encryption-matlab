@@ -1,4 +1,4 @@
-function [dec_img] = decrypte(enc_img)
+function [dec_img] = decrypt(enc_img)
 dec_img = dec2bin(enc_img);
 dec_img = dec_img(1:end, 8);
 img_size = find(dec_img == '0', 2);
